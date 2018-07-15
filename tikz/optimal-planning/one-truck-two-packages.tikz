@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+\tikzset{location/.style={circle, thick, fill=white, inner sep=9pt, draw=black}}
+
+\draw [thick] (-0.8,2) node {\Large A};
+\draw [thick] (-0.8,0) node {\Large B};
+\draw (0,2) node (A) {};
+\draw (0,0.05) node (B) {};
+\draw [-] (A) to (B);
+\node [location] at (0,2) {};
+\node [location] at (0,0.05) {};
+
+\node[inner sep=0pt] at (0,0.2) {\includegraphics[width=.03\textwidth]{truck.png}};
+\node[inner sep=0pt] at (0,1.75) {\includegraphics[width=.02\textwidth]{package.png}};
+\node[inner sep=0pt] at (0,-0.2) {\includegraphics[width=.02\textwidth]{package.png}};
+
+\end{tikzpicture}

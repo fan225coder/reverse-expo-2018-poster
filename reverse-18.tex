@@ -1,0 +1,102 @@
+\documentclass[final]{beamer}
+
+\usefonttheme[onlymath]{serif}
+\usepackage[orientation=landscape, size=a0]{beamerposter}
+\usepackage[absolute, overlay]{textpos}
+\usepackage{tikz}
+
+\usepackage{subfig}
+\usepackage[export]{adjustbox}
+\usepackage{float}
+
+\usepackage{multirow}
+\usepackage[default]{cantarell}
+\usepackage[T1]{fontenc}
+\usepackage{multirow}
+\usepackage{color, colortbl}
+\definecolor{darklavender}{RGB}{85, 63, 144}
+\usepackage[percent]{overpic}
+\setbeamertemplate{itemize item}{\raisebox{0.1ex}{$\blacktriangleright$}\hskip0.1em}
+\usepackage{algorithm,algorithmic}
+
+\usepackage{calc}
+
+\newcommand{\embl}[1]{\textbf{\textcolor{blue}{#1}}}
+
+\newcommand{\Tstrut}{\rule{0pt}{2.5ex}} % = `top' strut
+\mode<presentation>
+{
+  \usetheme{default} % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{rose} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+  \setbeamertemplate{frametitle}[default][center]
+  \setbeamerfont{frametitle}{size=\Large}
+}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{xcolor}
+
+\newenvironment<>{titleblock}[1][]{%
+%  \setbeamercolor{block title}{fg=darklavender, bg=white}
+  \setbeamercolor{block body}{fg=darklavender, bg=white}
+}
+
+\setbeamercolor{block title alerted}{fg=black, bg=white}
+\setbeamercolor{block body alerted}{fg=black, bg=white}
+
+\setbeamercolor{block body}{fg=black, bg=white}
+
+\makeatletter
+\newcommand\HUGE{\@setfontsize\Huge{70}{80}}
+\makeatother  
+
+\title{Test}
+
+\captionsetup[subfloat]{labelformat=empty}
+
+\newenvironment{myblock}[1]{\begin{block}{\centering \LARGE \textbf{#1}}}{\end{block}}
+
+\newcommand{\placeholder}[2]{\\ (placeholder) \textcolor{gray}{\rule{#1}{#2}}}
+
+\begin{document}
+
+\addtobeamertemplate{headline}{} 
+{
+\begin{tikzpicture}[remember picture, overlay] 
+\node [shift={(-11cm,-3cm)}] at (current page.north east) {\includegraphics[scale=1.00]{uofa.png}};
+\end{tikzpicture} 
+}
+%660/2540 =26%
+\begin{frame}[t]
+%\setbeamertemplate{frametitle}{\color{black}\bfseries\insertframetitle\par\vskip-6pt\hrulefill}
+\vspace*{0.5in}
+\centering
+\begin{titleblock}{\centering \HUGE \textcolor{darklavender}{Complementary M\&S Heuristics for Optimal Planning}}
+\vspace*{0.2in}
+\\ \LARGE \textbf{Gaojian Fan (gaojian@ualberta.ca)}, Robert Holte, Martin M\"{u}ller
+\vspace*{0.1in}
+\end{titleblock}
+
+%\noindent{\color{darklavender}\rule{\textwidth}{5pt}}
+
+\begin{columns}[t]
+\begin{column}{.32\textwidth}
+\input{column_background}
+\end{column}
+
+\begin{column}{.32\textwidth}
+\input{column_mas_hg}
+\end{column}
+
+\begin{column}{.32\textwidth}
+\input{column_lite_enhance}
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+\end{document}

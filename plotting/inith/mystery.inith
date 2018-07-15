@@ -1,0 +1,31 @@
+tasks	sd	lite	hg	lite-average	sd-error	lite-error	hg-error
+prob01.pddl	50	20	50	20	none	none	none
+prob02.pddl	30	40	40	40	none	none	none
+prob03.pddl	20	20	20	20	none	none	none
+							
+							
+prob06.pddl	30	40	40	40	out-of-memory	none	out-of-memory
+							
+prob08.pddl	20	20	20	20	out-of-memory	out-of-memory	out-of-memory
+prob09.pddl	30	40	80	40	none	none	none
+prob10.pddl	20	20	20	20	none	none	out-of-memory
+prob11.pddl	70	40	70	40	none	none	none
+							
+prob13.pddl	40	40	40	40	out-of-memory	out-of-memory	out-of-memory
+prob14.pddl	30	40	30	40	out-of-memory	out-of-memory	out-of-memory
+prob15.pddl	20	20	20	20	none	none	none
+							
+prob17.pddl	20	20	20	20	none	none	none
+							
+prob19.pddl	20	20	20	20	none	none	none
+prob20.pddl	20	20	20	20	none	none	none
+prob21.pddl	20	20	20	20	out-of-memory	out-of-memory	out-of-memory
+prob22.pddl	40	40	40	40	out-of-memory	out-of-memory	out-of-memory
+prob23.pddl	40	40	40	40	out-of-memory	out-of-memory	out-of-memory
+
+prob25.pddl	40	20	40	20	none	none	none
+prob26.pddl	20	20	20	20	none	none	none
+prob27.pddl	40	40	40	40	none	none	none
+prob28.pddl	50	40	70	40	none	none	none
+prob29.pddl	40	20	40	20	none	none	none
+prob30.pddl	30	40	40	40	none	none	none

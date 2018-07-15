@@ -1,0 +1,133 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you give
+% someone the link to this page, they can edit at the same
+% time. See the help menu above for more info. Enjoy!
+%
+% Note: you can export the pdf to see the result at full
+% resolution.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Author: Andreas Menge
+\documentclass[10pt]{article}
+\usepackage{tikz}
+%%%<
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{5pt}%
+%%%>
+
+\begin{comment}
+:Title: A simple graph-model in 3D
+:slug: 3d-graph-model
+
+A simple graph-model in 3D with a helping grid but not with a rotation of 45 degrees to avoid overlapping edges. The graph lines are drawn with a white background to visualize the ones closer to the viewer and hence improve the 3D-view. Code duplication is reduced.
+\end{comment}
+
+%transforms all coordinates the same way when used (use it within a scope!)
+%(rotation is not 45 degress to avoid overlapping edges)
+% Input: point of origins x and y coordinate
+\newcommand{\myGlobalTransformation}[2]
+{
+    \pgftransformcm{0.8}{-0.1}{0.3}{0.4}{\pgfpoint{#1cm}{#2cm}}
+}
+
+
+\tikzstyle myBG=[line width=3pt,opacity=1.0]
+
+% draws lines with white background to show which lines are closer to the
+% viewer (Hint: draw from bottom up and from back to front)
+%Input: start and end point
+\newcommand{\drawLinewithBG}[2]
+{
+    \draw[white,myBG]  (#1) -- (#2);
+    \draw[black,very thick] (#1) -- (#2);
+}
+
+% draws all horizontal graph lines within grid
+\newcommand{\graphLinesHorizontal}
+{
+    \drawLinewithBG{1,1}{3,1};
+    \drawLinewithBG{1,3}{3,3};
+    \drawLinewithBG{1,5}{3,5};
+    \drawLinewithBG{1,1}{1,3};
+    \drawLinewithBG{3,1}{3,3};
+    \drawLinewithBG{5,1}{5,3};
+}
+
+% draws all vertical graph lines within grid
+\newcommand{\graphLinesVertical}
+{
+    %swaps x and y coordinate (hence vertical lines):
+    \pgftransformcm{0}{1}{1}{0}{\pgfpoint{0cm}{0cm}}
+    
+    \drawLinewithBG{3,1}{5,1};
+    \drawLinewithBG{3,3}{5,3};
+    \drawLinewithBG{3,5}{5,5};
+    
+    \drawLinewithBG{1,5}{1,3};
+    \drawLinewithBG{3,5}{3,3};
+    \drawLinewithBG{5,5}{5,3};
+}
+\tikzset{init/.style={circle, fill=blue!65, inner sep=3pt, draw=black}}
+\tikzset{goal/.style={inner sep=0.15em, fill=red!75, star, star points=5, star point ratio=2.25}}
+
+%draws nodes of the grid
+%Input: point of origins x and y coordinate
+\newcommand{\graphThreeDnodes}[2]
+{
+    \begin{scope}
+        \myGlobalTransformation{#1}{#2};
+        \foreach \x in {1,3,5} {
+            \foreach \y in {1,3,5} {
+                \node at (\x,\y) [circle,fill=white,draw] {};
+                %this way circle of nodes will not be transformed
+            }
+        }
+    \end{scope}
+}
+
+
+\begin{document}
+\pagestyle{empty}
+
+\newcommand{\height}{1.3}
+\begin{tikzpicture}
+    %draws lower graph lines and those in z-direction:
+    \begin{scope}
+        \myGlobalTransformation{0}{0};
+        \graphLinesHorizontal;
+
+        %draws all graph lines in z-direction (reset transformation first!):
+        \foreach \x in {1,3,5} {
+            \foreach \y in {1,3,5} {
+                \node (thisNode) at (\x,\y) {};
+                {
+                    \pgftransformreset
+                    \draw[white,myBG]  (thisNode) -- ++(0,\height);
+                    \draw[black,very thick] (thisNode) -- ++(0,\height);
+                }
+            }
+        }
+    \end{scope}
+
+    %draws upper graph-lines:
+    \begin{scope}
+        \myGlobalTransformation{0}{\height};
+        \graphLinesVertical;
+    \end{scope}
+
+    % draws all graph nodes:
+    \graphThreeDnodes{0}{0};
+    \graphThreeDnodes{0}{\height};
+    \begin{scope}
+    \myGlobalTransformation{0}{\height};
+    \node at (1,5) [init] {};
+    \end{scope}
+    
+
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,36 @@
+tasks	sd	lite
+probBLOCKS-4-0.pddl	18	18
+probBLOCKS-4-1.pddl	30	12
+probBLOCKS-4-2.pddl	18	18
+probBLOCKS-5-0.pddl	27	18
+probBLOCKS-5-1.pddl	24	18
+probBLOCKS-5-2.pddl	48	24
+probBLOCKS-6-0.pddl	24	30
+probBLOCKS-6-1.pddl	18	30
+probBLOCKS-6-2.pddl	27	30
+probBLOCKS-7-0.pddl	27	36
+probBLOCKS-7-1.pddl	15	30
+probBLOCKS-7-2.pddl	15	30
+probBLOCKS-8-0.pddl	15	36
+probBLOCKS-8-1.pddl	15	30
+probBLOCKS-8-2.pddl	15	42
+probBLOCKS-9-0.pddl	27	42
+probBLOCKS-9-1.pddl	27	42
+probBLOCKS-9-2.pddl	33	48
+		
+probBLOCKS-10-1.pddl	33	54
+		
+probBLOCKS-11-0.pddl	48	48
+probBLOCKS-11-1.pddl	60	60
+probBLOCKS-11-2.pddl	51	48
+probBLOCKS-12-0.pddl	60	60
+probBLOCKS-12-1.pddl	63	66
+probBLOCKS-13-0.pddl	72	72
+probBLOCKS-13-1.pddl	72	72
+probBLOCKS-14-0.pddl	63	66
+probBLOCKS-14-1.pddl	78	78
+probBLOCKS-15-0.pddl	51	78
+probBLOCKS-15-1.pddl	78	78
+probBLOCKS-16-1.pddl	30	90
+probBLOCKS-16-2.pddl	33	78
+probBLOCKS-17-0.pddl	36	96

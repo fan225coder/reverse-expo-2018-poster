@@ -1,0 +1,44 @@
+\usetikzlibrary{arrows}
+\begin{tikzpicture}
+\tikzset{state/.style={circle, thick, fill=white, inner sep=3pt, draw=black}}
+\tikzset{goal/.style={inner sep=0.15em, fill=red!75, star, star points=5, star point ratio=2.25}}
+\tikzset{transition/.style={thick, -latex}}
+\tikzset{heur/.style={thick, dashed, -latex}}
+\newcommand{\locone}{0, 0.4}
+\newcommand{\locT}{0.7, 0}
+\newcommand{\locS}{0.7, 0.8}
+\newcommand{\locU}{1.4, 0.6}
+\newcommand{\locV}{1.4, 1.2}
+\newcommand{\locW}{2.1, 1.6}
+\newcommand{\locX}{2.8, 1.2}
+\newcommand{\locgoal}{3.5, 0.8}
+
+\node [state] (1) at (\locone) {};
+\node [state] (T) at (\locT) {};
+\node [state] (S) at (\locS) {};
+\node [state] (U) at (\locU) {};
+\node [state] (V) at (\locV) {};
+\node [state] (W) at (\locW) {};
+\node [state] (X) at (\locX) {};
+\node [state] (goal) at (\locgoal) {};
+\node [goal] at (\locgoal) {};
+\draw [transition] (1) to (T);
+\draw [transition] (1) to (S);
+\draw [transition] (S) to (U);
+\draw [transition] (S) to (V);
+\draw [transition] (V) to (W);
+\draw [transition] (W) to (X);
+\draw [transition] (X) to (goal);
+
+\draw [heur] (T) -- (goal) node [midway, sloped, below] {$h(t)$};
+\draw [heur] (U) -- (goal) node [midway, xshift=-10pt, yshift=-3pt, sloped, above] {$h(u)$};
+%\draw [heur] (V) -- (goal) node [midway, xshift=-10pt, sloped, above] {$h(v)$};
+
+\draw (\locS) node {$s$};
+\draw (\locT) node {$t$};
+\draw (\locU) node {$u$};
+\draw (\locV) node {$v$};
+\draw (\locW) node {$w$};
+\draw (\locX) node {$x$};
+
+\end{tikzpicture}

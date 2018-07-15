@@ -1,0 +1,25 @@
+\usetikzlibrary{arrows}
+\begin{tikzpicture}
+\tikzset{state/.style={circle, thick, fill=white, inner sep=3pt, draw=black}}
+\tikzset{goal/.style={inner sep=0.15em, fill=red!75, star, star points=5, star point ratio=2.25}}
+\tikzset{transition/.style={thick, -latex}}
+\tikzset{heur/.style={thick, dashed, -latex}}
+\newcommand{\locone}{0, 0.4}
+\newcommand{\locT}{0.7, 0}
+\newcommand{\locS}{0.7, 0.8}
+\newcommand{\locgoal}{3.5, 0.8}
+
+\node [state] (1) at (\locone) {};
+\node [state] (T) at (\locT) {};
+\node [state] (S) at (\locS) {};
+\node [state] (goal) at (\locgoal) {};
+\node [goal] at (\locgoal) {};
+\draw [transition] (1) to (T);
+\draw [transition] (1) to (S);
+
+\draw [heur] (T) -- (goal) node [midway, sloped, below] {$h(t)$};
+\draw [heur] (S) -- (goal) node [midway, sloped, above] {$h(s)$};
+\draw (\locS) node {$s$};
+\draw (\locT) node {$t$};
+
+\end{tikzpicture}

@@ -1,0 +1,56 @@
+\nextgroupplot[
+scale = 0.85,
+ymode=log,
+xmode=log,
+xmin=1,xmax=5E8,ymin=1,ymax=5E8,
+xlabel style = {align=center, text width=5cm},
+xlabel = \textbf{SCC-DFP},
+ylabel = \textbf{lite-HG},
+xtickten = {1,3,5,7},
+ytickten = {1,3,5,7},
+unit vector ratio*=1 1,
+legend pos=outer north east,
+]
+\addplot[thin, sharp plot, gray, forget plot] coordinates{(1,1)(5E8,5E8)};
+\addplot[thin, dashed, sharp plot, gray, forget plot] coordinates{(1,1E8)(5E8,1E8)};
+\addplot[thin, dashed, sharp plot, gray, forget plot] coordinates{(1E8,1)(1E8,5E8)};
+
+\adddomain{airport}{sd}{lite-hg}
+\adddomain{airport}{sd}{lite-hg}
+\adddomain{blocks}{sd}{lite-hg}
+\adddomain{barman}{sd}{lite-hg}
+%\adddomain{childsnack-adl}{sd}{lite-hg}
+\adddomain{depot}{sd}{lite-hg}
+\adddomain{elevators}{sd}{lite-hg}
+\adddomain{floortile}{sd}{lite-hg}
+\adddomain{freecell}{sd}{lite-hg}
+\adddomain{ged}{sd}{lite-hg}
+\adddomain{grid}{sd}{lite-hg}
+\adddomain{gripper}{sd}{lite-hg}
+\adddomain{hiking}{sd}{lite-hg}
+\adddomain{logistics}{sd}{lite-hg}
+\adddomain{miconic}{sd}{lite-hg}
+\adddomain{movie}{sd}{lite-hg}
+\adddomain{mprime}{sd}{lite-hg}
+\adddomain{mystery}{sd}{lite-hg}
+\adddomain{nomystery}{sd}{lite-hg}
+\adddomain{openstacks}{sd}{lite-hg}
+\adddomain{parcprinter}{sd}{lite-hg}
+\adddomain{parking}{sd}{lite-hg}
+\adddomain{pathways-noneg}{sd}{lite-hg}
+\adddomain{pegsol}{sd}{lite-hg}
+\adddomain{pipesworld}{sd}{lite-hg}
+\adddomain{psr-small}{sd}{lite-hg}
+\adddomain{rovers}{sd}{lite-hg}
+\adddomain{satellite}{sd}{lite-hg}
+\adddomain{scanalyzer}{sd}{lite-hg}
+\adddomain{sokoban}{sd}{lite-hg}
+\adddomain{storage}{sd}{lite-hg}
+\adddomain{tetris}{sd}{lite-hg}
+\adddomain{tidybot}{sd}{lite-hg}
+\adddomain{tpp}{sd}{lite-hg}
+\adddomain{transport}{sd}{lite-hg}
+\adddomain{trucks}{sd}{lite-hg}
+\adddomain{visitall}{sd}{lite-hg}
+\adddomain{woodworking}{sd}{lite-hg}
+\adddomain{zenotravel}{sd}{lite-hg}

@@ -1,0 +1,45 @@
+\documentclass[landscape]{article}
+
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.9}
+\usepgfplotslibrary{external}
+\tikzexternalize % activate!
+
+\newcommand{\adddomainue}[3]{
+\addplot[default, forget plot] table [x=#2, y=#3]{expansions/#1.exp};
+}
+
+\newcommand{\loadlite}[1]{
+\pgfplotstableset{create on use/sd/.style={create col/copy column from table={expansions/#1.exp}{sd}}}
+\pgfplotstableset{create on use/hg/.style={create col/copy column from table={expansions/#1.exp}{hg}}}
+\pgfplotstableset{create on use/lite/.style={create col/copy column from table={expansions/#1.exp}{lite}}}
+}
+
+\newcommand{\adddomain}[3]{
+\loadlite{#1}
+\addplot[default, forget plot] table [x=#2, y=#3]{enhanced-expansions/#1.exp};
+}
+ 
+\begin{document}
+
+\hspace*{-100pt}
+\begin{tikzpicture}[
+default/.style={draw=blue, only marks, fill opacity=0.6, draw opacity=0.6, mark=asterisk, mark size=2},
+%new/.style={fill=red, very thin, only marks, mark=*, mark size=2},
+%unsolved/.style={draw=blue, only marks, fill opacity=0.7, draw opacity=0.7, mark=asterisk, mark size=2.5},
+%eager/.style={fill=red, very thin, only marks, fill opacity=0.8, mark=*, mark size=2},
+]
+\begin{groupplot}[group style={group name=my plots,group size= 1 by 1,horizontal sep=1.5cm}]
+
+%\input{figure4.tex}
+%\input{figure5.tex}
+\input{figure6.tex}
+
+\end{groupplot}
+\end{tikzpicture}
+
+
+\end{document}
+

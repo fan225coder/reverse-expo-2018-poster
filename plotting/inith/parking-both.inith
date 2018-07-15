@@ -1,0 +1,41 @@
+tasks	sd	lite
+pfile03-011.pddl	40	32
+pfile03-012.pddl	48	48
+		
+pfile04-014.pddl	28	52
+		
+pfile04-016.pddl	28	48
+		
+		
+pfile05-019.pddl	40	64
+		
+pfile06-021.pddl	68	68
+pfile06-022.pddl	72	72
+pfile06-023.pddl	64	64
+pfile06-024.pddl	68	68
+pfile07-025.pddl	36	80
+pfile07-026.pddl	32	76
+pfile07-027.pddl	32	80
+pfile07-028.pddl	32	80
+pfile08-029.pddl	56	84
+pfile08-030.pddl	60	88
+p_12_7-01.pddl	48	48
+p_12_7-02.pddl	44	44
+p_12_7-03.pddl	44	44
+p_12_7-04.pddl	44	44
+p_14_8-01.pddl	28	52
+		
+		
+p_14_8-04.pddl	32	52
+p_16_9-01.pddl	36	60
+p_16_9-02.pddl	40	56
+p_16_9-03.pddl	48	60
+p_16_9-04.pddl	44	64
+p_18_10-01.pddl	76	72
+p_18_10-02.pddl	68	68
+p_18_10-03.pddl	68	68
+p_18_10-04.pddl	68	68
+p_20_11-01.pddl	36	76
+p_20_11-02.pddl	28	72
+p_20_11-03.pddl	36	80
+p_20_11-04.pddl	28	76

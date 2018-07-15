@@ -1,0 +1,174 @@
+\documentclass[landscape]{article}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+
+\usepgfplotslibrary{external}
+\tikzexternalize % activate!
+\pgfplotsset{compat=1.9}
+ 
+\begin{document}
+
+\hspace{-100pt}
+\begin{tikzpicture}[
+star/.style={draw=blue, only marks, fill opacity=0.6, draw opacity=0.6, mark=asterisk, mark size=2},
+new/.style={fill=red, very thin, only marks, mark=*, mark size=2},
+unsolved/.style={draw=blue, only marks, fill opacity=0.7, draw opacity=0.7, mark=asterisk, mark size=2.5},
+eager/.style={fill=red, very thin, only marks, fill opacity=0.8, mark=*, mark size=2},
+]
+\begin{groupplot}[group style={group name=my plots,group size= 1 by 1,horizontal sep=2cm}]
+
+%\nextgroupplot[
+%scale = 0.83,
+%xmode=log,
+%xmin=1,xmax=1800,
+%ymin=0,ymax=100,
+%xlabel = {\textbf{construction time (in seconds)\\ (a)}},
+%xlabel style = {align=center, text width=10cm},
+%ylabel = {\textbf{\% of successful constructions}},
+%ylabel style = {yshift=-2ex, xshift=-.5ex},
+%legend pos = south east,
+%%yticklabel=\pgfmathprintnumber{\tick}\,\%,
+%extra y ticks={97.6, 88.2},
+%extra y tick style = {tick style={draw=none}, ticklabel pos=right},
+%extra y tick labels={
+%	\textcolor{blue}{97.6\%},
+%	\textcolor{red}{88.2\%}
+%	},
+%unit vector ratio*=1700 120,
+%]
+%
+%\addplot[thick, red, dashed] table [x=second, y=sd-any]{construction-time/cdf}; \addlegendentry{\small SCC-DFP}
+%\addplot[thick, blue] table [x=second, y=lite-any]{construction-time/cdf}; \addlegendentry{\small MS-lite}
+%
+%\addplot[dotted, sharp plot, gray, forget plot] coordinates{(1, 77.5) (1800, 77.5)};
+%\addplot[dotted, sharp plot, gray, forget plot] coordinates{(194, 0) (194, 100)};
+%
+%\node[anchor=south east] at (axis cs: 277, 77.5) {(194,\ 77.5\%)};
+
+%\nextgroupplot[
+%scale = 0.85,
+%ymode=log,
+%xmode=log,
+%xmin=1,xmax=5E8,ymin=1,ymax=5E8,
+%xlabel = \textbf{SCC-DFP},
+%xlabel style = {align=center, text width=5cm},
+%ylabel = \textbf{MS-lite},
+%xtickten = {1,3,5,7},
+%ytickten = {1,3,5,7},
+%unit vector ratio*=1 1,
+%legend pos=outer north east,
+%]
+%
+%\addplot[thin, sharp plot, gray, forget plot] coordinates{(1, 1)(5E8, 5E8)};
+%\addplot[thin, dashed, sharp plot, gray, forget plot] coordinates{(1, 1E8)(5E8, 1E8)};
+%\addplot[thin, dashed, sharp plot, gray, forget plot] coordinates{(1E8, 1)(1E8, 5E8)};
+%
+%\addplot[draw=gray, fill=gray, draw opacity=0, fill opacity=0.2, forget plot] coordinates {(1, 1) (10, 1E8) (300, 1E8) (30, 1)};
+%
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/airport.exp}; 
+% 
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/blocks.exp};
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/barman.exp};
+%
+%%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/cavediving-adl.exp};
+%%\addplot[new, forget plot] table [x=sd, y=lite]{expansions/childsnack-adl.exp};
+%%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/citycar-adl.exp};
+%
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/depot.exp};
+%
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/elevators.exp};
+%
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/floortile.exp};
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/freecell.exp};
+%
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/ged.exp};
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/grid.exp};
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/gripper.exp};
+%
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/hiking.exp};
+%
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/logistics.exp};
+%
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/maintenance-adl.exp};
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/miconic.exp};
+%%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/miconic-adl.exp};
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/movie.exp};
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/mprime.exp};
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/mystery.exp};
+%
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/nomystery.exp};
+%
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/openstacks.exp};
+%
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/parcprinter.exp};
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/parking.exp};
+%%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/pathways.exp};
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/pathways-noneg.exp};
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/pegsol.exp};
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/pipesworld.exp};
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/psr-small.exp};
+%
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/rovers.exp};
+%
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/satellite.exp};
+%%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/schedule.exp};
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/scanalyzer.exp};
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/sokoban.exp};
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/storage.exp};
+%
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/tetris.exp};
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/tidybot.exp};
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/tpp.exp};
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/transport.exp};
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/trucks.exp};
+%
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/visitall.exp};
+%
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/woodworking.exp};
+%
+%\addplot[star, forget plot] table [x=sd, y=lite]{expansions/zenotravel.exp};
+%\draw[->,>=stealth, very thick, red](axis cs:2e6,5)--(axis cs:5e5,15);
+
+\nextgroupplot[
+%ymode=log,
+%xmode=log,
+scale=0.85,
+xmin=1,xmax=100,ymin=1,ymax=100,
+xlabel = \textbf{SCC-DFP},
+xlabel style = {align=center, text width=5cm},
+ylabel style = {},
+ylabel = \textbf{MS-lite},
+%xtickten = {1,3,5,7},
+%ytickten = {1,3,5,7},
+unit vector ratio*=1 1,
+legend pos=outer north east,
+legend style={nodes={rotate=90, anchor=west}},
+]
+
+%\addplot[draw=gray, fill=gray, draw opacity=0, fill opacity=0.2, forget plot] coordinates {(1, 1) (100,83.33) (100,100) (75, 100)};
+\addplot[thin, sharp plot, gray, forget plot] coordinates{(1,1)(100,100)};
+
+\addplot[dashed, sharp plot, gray, forget plot] coordinates{(1,1) (75, 100)};
+
+\addplot[draw=gray, fill=gray, draw opacity=0, fill opacity=0.2, forget plot] coordinates{(2, 1) (5, 100) (10,100) (7,1)};
+
+
+\addplot[unsolved, forget plot] table [x=sd, y=lite]{inith/mystery-both.inith};
+\addplot[eager, forget plot] table [x=sd, y=lite]{inith/mystery-only.inith};
+
+\addplot[unsolved, forget plot] table [x=sd, y=lite]{inith/parking-both.inith};
+\addplot[eager, forget plot] table [x=sd, y=lite]{inith/parking-only.inith};
+
+\addplot[unsolved, forget plot] table [x=sd, y=lite]{inith/blocks-both.inith};
+\addplot[eager, forget plot] table [x=sd, y=lite]{inith/blocks-only.inith};
+
+\addplot[unsolved] table [x=sd, y=lite]{inith/visitall-both.inith};\addlegendentry{{\small unsolved}}
+\addplot[eager] table [x=sd, y=lite]{inith/visitall-only.inith};\addlegendentry{\small MS-lite solves}
+
+\end{groupplot}
+\end{tikzpicture}
+
+
+\end{document}
+
